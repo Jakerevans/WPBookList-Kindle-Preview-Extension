@@ -11,7 +11,7 @@
  * Plugin Name: WPBookList Kindle Extension
  * Plugin URI: https://www.jakerevans.com
  * Description: A WPBookList Extension that adds Kindle Previews to applicable Book Views, Pages, and Posts.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Jake Evans
  * Text Domain: wpbooklist
  * Author URI: https://www.jakerevans.com
@@ -63,7 +63,7 @@ global $wpdb;
 /* CONSTANT DEFINITIONS */
 
 	if ( ! defined('WPBOOKLIST_VERSION_NUM' ) ) {
-		define( 'WPBOOKLIST_VERSION_NUM', '6.1.2' );
+		define( 'WPBOOKLIST_VERSION_NUM', '6.1.6' );
 	}
 
 	// This is the URL our updater / license checker pings. This should be the URL of the site with EDD installed.
@@ -73,7 +73,7 @@ global $wpdb;
 	define( 'EDD_SL_ITEM_ID_KINDLE', 3475 );
 
 	// This Extension's Version Number.
-	define( 'WPBOOKLIST_KINDLE_VERSION_NUM', '1.0.0' );
+	define( 'WPBOOKLIST_KINDLE_VERSION_NUM', '1.0.1' );
 
 	// Root plugin folder directory.
 	define( 'KINDLE_ROOT_DIR', plugin_dir_path( __FILE__ ) );
@@ -207,9 +207,6 @@ global $wpdb;
 
 	// Function that adds in the License Key Submission form on this Extension's entry on the plugins page.
 	add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $kindle_general_functions, 'wpbooklist_kindle_pluginspage_nonce_entry' ) );
-
-	// Function that loads up the menu page entry for this Extension.
-	add_filter( 'wpbooklist_add_sub_menu', array( $kindle_general_functions, 'wpbooklist_kindle_submenu' ) );
 
 	// Adding the function that will take our KINDLE_NONCES_ARRAY Constant from above and create actual nonces to be passed to Javascript functions.
 	add_action( 'init', array( $kindle_general_functions, 'wpbooklist_kindle_create_nonces' ) );

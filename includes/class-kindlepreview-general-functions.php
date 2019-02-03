@@ -303,20 +303,6 @@ if ( ! class_exists( 'Kindle_General_Functions', false ) ) :
 			}
 		}
 
-		/** Functions that loads up the menu page entry for this Extension.
-		 *
-		 *  @param array $submenu_array - The array that contains submenu entries to add to.
-		 */
-		public function wpbooklist_kindle_submenu( $submenu_array ) {
-			$extra_submenu = array(
-				'Kindle',
-			);
-
-			// Combine the two arrays.
-			$submenu_array = array_merge( $submenu_array, $extra_submenu );
-			return $submenu_array;
-		}
-
 		/**
 		 *  Here we take the Constant defined in wpbooklist.php that holds the values that all our nonces will be created from, we create the actual nonces using wp_create_nonce, and the we define our new, final nonces Constant, called WPBOOKLIST_FINAL_NONCES_ARRAY.
 		 */
